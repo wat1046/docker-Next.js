@@ -12,6 +12,7 @@ services:
 
   app:
     build: ./docker/node
+    container_name: app
     volumes:
       - ./src:/usr/src/app
     ports:

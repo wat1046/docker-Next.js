@@ -7,4 +7,4 @@ nginx
 
 ## プロジェクトの作成
 
-docker-compose run -rm node npx create-next-app .
+docker-compose run --rm app npx create-next-app .
