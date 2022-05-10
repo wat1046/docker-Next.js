@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  nginx:
+    image: nginx:stable
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - "./volumes/nginx/conf.d:/etc/nginx/conf.d"
+    depends_on: 
+      - app
+
+  app:
+    build: ./docker/node
+    volumes:
+      - ./src:/usr/src/app
+    ports:
+      - "3000:3000"
+    command: bash -c "npm run dev"
